@@ -1,5 +1,9 @@
 class Product < ApplicationRecord
-  belongs_to :category, :condition
+  belongs_to :category
+  belongs_to :condition
+  belongs_to :owner
 
-  validates :name, :description, :size, :condition, :price, :stock_quantity, presence: true
+
+
+  validates :name, :description, :size, :price, :stock_quantity, presence: true
 end
