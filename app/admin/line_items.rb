@@ -12,6 +12,6 @@ ActiveAdmin.register LineItem do
 #   permitted
 # end
 
-permit_params :quantity, :price
+permit_params :quantity, :price, :product_id, :order_id
 
 end
