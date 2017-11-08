@@ -60,3 +60,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'country_select'
 gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+#gem 'rmagick'
