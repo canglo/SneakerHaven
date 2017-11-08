@@ -12,6 +12,6 @@ ActiveAdmin.register Order do
 #   permitted
 # end
 
-permit_params :status, :gst, :pst, :shipping_cost
+permit_params :status, :gst, :pst, :shipping_cost, :customer_id
 
 end
