@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/about'
+  get 'about', to: 'pages#about', as: 'about'
 
-  get 'pages/contact'
+  get 'contact', to: 'pages#contact', as: 'contact'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

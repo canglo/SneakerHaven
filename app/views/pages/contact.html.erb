@@ -1,2 +1,9 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<h1>Contact</h1>
+<% @contact_information.each do |contact| %>
+<h2><%= contact.title %></h2>
+  <ul>
+    <li><strong>Phone number:</strong> <%= contact.phone_number %></li>
+    <li><strong>E-mail:</strong> <%= contact.email %></li>
+    <li><strong>Location:</strong> <%= contact.address %>, <%= contact.city %>, <%= contact.province %> <%= contact.postal_code %></li>
+  </ul>
+<% end %>
