@@ -63,3 +63,4 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 #gem 'rmagick'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
