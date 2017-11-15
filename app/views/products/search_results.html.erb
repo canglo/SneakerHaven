@@ -34,13 +34,13 @@
 
 
         <div class="col-lg-9">
-
+          <h2>Search Result for '<%= params[:search_keywords] %>' </h2>
           <div class="row">
-            <%= render partial: 'common/allproducts'%>
+            <%= render partial: 'common/search' %>
           </div>
 
           <div class="container">
-            <%= paginate @product %>
+            <%= paginate @found_products %>
           </div>
 
         </div>
