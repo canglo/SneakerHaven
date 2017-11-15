@@ -61,6 +61,6 @@ gem 'devise'
 gem 'country_select'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
-#gem 'rmagick'
+#gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
