@@ -64,3 +64,4 @@ gem "mini_magick"
 #gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'kaminari'
