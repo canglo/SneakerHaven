@@ -17,18 +17,15 @@
                 <div class="input-group">
 
                   <%= form_tag search_results_path, method: 'get' do |f| %>
-                  <!-- <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Go!</button>
-                  </span> -->
+
                     <%= text_field_tag :search_keywords %>
                     <%= submit_tag "Go" %>
+
                   <% end %>
 
                 </div>
               </div>
           </div>
-
 
         </div>
 
@@ -36,7 +33,7 @@
         <div class="col-lg-9">
           <h2>Search Result for '<%= params[:search_keywords] %>' </h2>
           <div class="row">
-            <%= render partial: 'common/search' %>
+            <%= render partial: 'common/allproducts', collection: @found_products %>
           </div>
 
           <div class="container">
