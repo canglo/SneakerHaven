@@ -2,29 +2,14 @@
 
         <div class="col-lg-3">
 
-          <h2 class="my-4">Brands</h2>
-
-          <div class="list-group">
-            <a href="#" class="list-group-item">Nike</a>
-            <a href="#" class="list-group-item">Adidas</a>
-            <a href="#" class="list-group-item">Jordan</a>
-          </div>
-
           <h2 class="my-4">Search</h2>
+          <%= render partial: 'common/search' %>
 
-          <div class="card my-4">
-              <div class="card-body">
-                <div class="input-group">
-
-                  <%= form_tag search_results_path, method: 'get' do |f| %>
-
-                    <%= text_field_tag :search_keywords %>
-                    <%= submit_tag "Go" %>
-
-                  <% end %>
-
-                </div>
-              </div>
+          <h2 class="my-4">Brands</h2>
+          <div class="list-group">
+            <% Category.all.each do |category| %>
+              <%= link_to category.name, category_path(category), :class => "list-group-item" %>
+            <% end %>
           </div>
 
         </div>

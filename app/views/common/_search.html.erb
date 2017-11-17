@@ -1,0 +1,9 @@
+<div>
+<%= form_tag search_results_path, method: 'get' do %>
+  <%= select_tag "categories",
+      options_from_collection_for_select(@categories, "id", "name"),
+      :include_blank => "All", :class => "btn btn-default dropdown-toggle" %>
+  <%= text_field_tag :search_keywords, "", :class => "form-control" %>
+  <%= submit_tag "Search", :class => "btn btn-default" %>
+<% end %>
+</div>
