@@ -1,14 +1,11 @@
 class ProductsController < ApplicationController
   def index
     @categories = Category.all
-    @product = Product.order(:name).page(params[:page]).per(6)
+    @products = Product.order(:name).page(params[:page]).per(6)
   end
 
   def show
-  end
-
-  def search
-
+    @product = Product.find(params[:id])
   end
 
   def search_results
