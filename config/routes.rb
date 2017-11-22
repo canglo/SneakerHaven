@@ -7,10 +7,13 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'pages#contact', as: 'contact'
 
-  get 'search' => 'products#search', as: 'search'
   get 'search_results' => 'products#search_results', as: 'search_results'
 
   get 'category/:id', to: 'categories#brand_category', as: 'category', id: /\d+/
+
+  get 'recently_added', to: 'products#new', as: 'recently_added'
+  get 'recently_updated', to: 'products#recently_updated', as: 'recently_updated'
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

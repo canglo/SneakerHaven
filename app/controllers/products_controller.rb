@@ -18,4 +18,14 @@ class ProductsController < ApplicationController
       @found_products = Product.where("name LIKE ?", keywords).page(params[:page]).per(6)
     end
   end
+
+  def new
+    @categories = Category.all
+    @new = Product.order("created_at DESC").page(params[:page]).per(6)
+  end
+
+  def recently_updated
+    @categories = Category.all
+    @updated = Product.order("updated_at DESC").page(params[:page]).per(6)
+  end
 end
