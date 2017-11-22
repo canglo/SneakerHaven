@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122195348) do
+ActiveRecord::Schema.define(version: 20171122201654) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -63,10 +63,11 @@ ActiveRecord::Schema.define(version: 20171122195348) do
     t.string "phone_number"
     t.string "address"
     t.string "city"
-    t.string "province"
     t.string "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "province_id"
+    t.index ["province_id"], name: "index_customers_on_province_id"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -128,6 +129,14 @@ ActiveRecord::Schema.define(version: 20171122195348) do
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["condition_id"], name: "index_products_on_condition_id"
     t.index ["owner_id"], name: "index_products_on_owner_id"
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.decimal "pst"
+    t.decimal "gst"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

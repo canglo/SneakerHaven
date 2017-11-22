@@ -1,4 +1,4 @@
-ActiveAdmin.register Customer do
+ActiveAdmin.register Province do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,6 +12,6 @@ ActiveAdmin.register Customer do
 #   permitted
 # end
 
-permit_params :email, :password, :first_name, :last_name, :phone_number, :address, :city, :postal_code, :province_id
+permit_params :name, :gst, :pst
 
 end
