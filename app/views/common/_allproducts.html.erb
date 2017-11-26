@@ -3,7 +3,7 @@
     <%= image_tag allproducts.image, :class => "productImage" %>
     <div class="caption">
       <h3><%= allproducts.name %></h3>
-      <p><strong>Price: $ </strong><%= allproducts.price %></p>
+      <p><strong>Price: </strong><%= number_to_currency(allproducts.price, unit: "$") %></p>
       <p><strong>Category: </strong><%= allproducts.category.name %></p>
 
       <p>
