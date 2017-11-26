@@ -20,7 +20,7 @@
 						<%= f.hidden_field :product_id, value: item.product.id %>
 						<h5>Price: $ <%= item.product.price %></h5>
 						<div class="form-group">
-							<%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
+							<%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control', type: 'number', max: item.product.stock_quantity %>
 						</div>
 						<div class="btn-group">
 							<%= f.submit "Update Quantity", class: 'btn btn-primary' %>

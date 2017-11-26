@@ -18,10 +18,17 @@
           <h5 class="condition">Condition: <%= @product.condition.name %></h5>
 					<h5 class="sizes">Size: <%= @product.size %></h5>
 					<div class="action">
-            <button type="button" class="btn btn-primary">
+            <!-- <button type="button" class="btn btn-primary">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
               Add
-            </button>
+            </button> -->
+						<%= form_for(@line_item, remote: true) do |f| %>
+
+		          <%= f.hidden_field :product_id, value: @product.id %>
+		          <%= f.hidden_field :quantity, value: 1 %>
+		          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+
+		        <% end %>
 					</div>
 				</div>
 

@@ -3,11 +3,11 @@ class ProductsController < ApplicationController
     @categories = Category.all
     @products = Product.order(:name).page(params[:page]).per(6)
     @line_item = current_order.line_items.new
-    @guest_customer = Customer.where("id == 1")
   end
 
   def show
     @product = Product.find(params[:id])
+    @line_item = current_order.line_items.new
   end
 
   def search_results
@@ -26,10 +26,12 @@ class ProductsController < ApplicationController
   def new
     @categories = Category.all
     @new = Product.order("created_at DESC").page(params[:page]).per(6)
+    @line_item = current_order.line_items.new
   end
 
   def recently_updated
     @categories = Category.all
     @updated = Product.order("updated_at DESC").page(params[:page]).per(6)
+    @line_item = current_order.line_items.new
   end
 end
