@@ -5,14 +5,21 @@
       <h3><%= allproducts.name %></h3>
       <p><strong>Price: $ </strong><%= allproducts.price %></p>
       <p><strong>Category: </strong><%= allproducts.category.name %></p>
-      <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a>
-      <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+
       <p>
         <%= link_to 'View', product_path(allproducts), :class => "btn btn-default" %>
-        <button type="button" class="btn btn-primary">
+        <!-- <button type="button" class="btn btn-primary">
           <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
           Add
-        </button>
+        </button> -->
+        <%= form_for(@line_item, remote: true) do |f| %>
+
+          <%= f.hidden_field :product_id, value: allproducts.id %>
+          <%= f.hidden_field :quantity, value: 1 %>
+          <%= f.hidden_field :customer_id, value: 1 %>
+          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+
+        <% end %>
       </p>
     </div>
   </div>

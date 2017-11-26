@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   def index
     @categories = Category.all
     @products = Product.order(:name).page(params[:page]).per(6)
+    @line_item = current_order.line_items.new
+    @guest_customer = Customer.where("id == 1")
   end
 
   def show
@@ -10,6 +12,8 @@ class ProductsController < ApplicationController
 
   def search_results
     @categories = Category.all
+    @line_item = current_order.line_items.new
+
     keywords = "%" + params[:search_keywords] + "%"
 
     if params[:categories] != ""

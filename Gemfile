@@ -65,3 +65,6 @@ gem "mini_magick"
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'kaminari'
+gem "therubyracer"
+gem 'less-rails', '~> 3.0.0'
+gem 'sprockets'

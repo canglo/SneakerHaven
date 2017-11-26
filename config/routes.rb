@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resource :carts, only: [:show]
   root to: 'products#index'
 
   get 'product/:id', to: 'products#show', as: 'product', id: /\d+/

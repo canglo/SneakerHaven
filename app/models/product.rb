@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   belongs_to :owner
 
   has_many :line_items
-  has_many :orders, :through => :line_items
+  #has_many :orders, :through => :line_items
 
   mount_uploader :image, ImageUploader
 
