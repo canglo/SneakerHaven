@@ -12,13 +12,13 @@ ruby '2.3.3'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 # sqlite3 for development and test database
-gem 'sqlite3', group: [:development, :test]
+#gem 'sqlite3', group: [:development, :test]
 
 # postgres for production database
-gem 'pg', group: :production
+#gem 'pg', group: :production
 
 # 12 factor for Heroku
-gem 'rails_12factor', group: :production
+#gem 'rails_12factor', group: :production
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -63,6 +63,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 # PROJECT SPECIFIC GEMS
 
