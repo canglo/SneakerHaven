@@ -12,6 +12,6 @@ ActiveAdmin.register Province do
 #   permitted
 # end
 
-permit_params :name, :gst, :pst
+permit_params :name, :gst, :pst, :hst
 
 end
