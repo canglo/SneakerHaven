@@ -86,3 +86,4 @@ gem 'kaminari'
 gem "therubyracer"
 gem 'less-rails', '~> 3.0.0'
 gem 'sprockets'
+gem 'simple_form'
