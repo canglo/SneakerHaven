@@ -1,0 +1,2 @@
+class PlaceOrdersController < ApplicationController
+end

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get 'recently_added', to: 'products#new', as: 'recently_added'
   get 'recently_updated', to: 'products#recently_updated', as: 'recently_updated'
 
+  get 'charges', to: 'charges#index', as: 'charges'
+  get 'signin', to: 'customers#index', as: 'signin'
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -5,6 +5,7 @@
       <h3><%= allproducts.name %></h3>
       <p><strong>Price: </strong><%= number_to_currency(allproducts.price, unit: "$") %></p>
       <p><strong>Category: </strong><%= allproducts.category.name %></p>
+      <p><strong>Stock: </strong><%= allproducts.stock_quantity %></p>
 
       <p>
         <%= link_to 'View', product_path(allproducts), :class => "btn btn-default" %>
