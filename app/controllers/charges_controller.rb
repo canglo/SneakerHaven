@@ -30,10 +30,10 @@ class ChargesController < ApplicationController
     @total = @subtotal + @gst + @pst + @hst
   end
 
-  session[:order_id]=nil
-
   current_order.update_columns(status: 'paid', pst: @pst, gst: @gst, shipping_cost: 0,
-                              customer_id: current_customer.id, total: @total)
+                              customer_id: current_customer.id, total: @total, hst: @hst)
+
+  session.delete(:order_id)
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
