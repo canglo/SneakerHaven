@@ -1,1 +1,45 @@
-<h1>Hello</h1>
+<h2>Order Review</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="well">
+
+        <h3>Customer Information</h3>
+        <p>E-mail: <%= @user.email %></p>
+        <p>Name: <%= @user.first_name %><%= @user.last_name %></p>
+        <p>Phone: <%= @user.phone_number %></p>
+        <p>Address: <%= @user.address %>, <%= @user.city %>, <%= @user.province.name %> <%= @user.postal_code %></p>
+      </div>
+
+      <div class="well">
+        <p><strong>Subtotal: </strong><%= number_to_currency(@subtotal, unit: "$") %></p>
+        <p><strong>GST: </strong><%= number_to_currency(@gst, unit: "$") %></p>
+        <p><strong>PST: </strong><%= number_to_currency(@pst, unit: "$") %></p>
+        <p><strong>HST: </strong><%= number_to_currency(@hst, unit: "$") %></p>
+        <p><strong>Total: </strong><%= number_to_currency(@total, unit: "$") %></p>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <% @line_items.each do |item| %>
+
+    		<div class="well">
+    			<div class="row">
+    				<div class="col-sm-8">
+    					<p><%= item.product.name %></p>
+              <p><strong>Item Price: </strong><%= number_to_currency(item.product.price, unit: "$") %></p>
+    				</div>
+
+    				<div class="col-sm-4">
+    					<div class="pull-right">
+                <p><strong>Quantity: </strong> <%= item.quantity %></p>
+    					</div>
+    				</div>
+
+    			</div>
+    		</div>
+
+    	<% end %>
+    </div>
+  </div>
+</div>
