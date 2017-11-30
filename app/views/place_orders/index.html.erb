@@ -12,15 +12,33 @@
       </div>
 
       <div class="well">
+        <h3>Summary Cost</h3>
         <p><strong>Subtotal: </strong><%= number_to_currency(@subtotal, unit: "$") %></p>
         <p><strong>GST: </strong><%= number_to_currency(@gst, unit: "$") %></p>
         <p><strong>PST: </strong><%= number_to_currency(@pst, unit: "$") %></p>
         <p><strong>HST: </strong><%= number_to_currency(@hst, unit: "$") %></p>
         <p><strong>Total: </strong><%= number_to_currency(@total, unit: "$") %></p>
       </div>
+
+      <%= form_tag charges_path do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Sneaker Haven Shoe Payment"
+                data-amount= "<%= @stripe_total %>"
+                data-locale="auto"></script>
+      <% end %>
     </div>
 
     <div class="col-lg-6">
+      <h3>Your Orders</h3>
       <% @line_items.each do |item| %>
 
     		<div class="well">

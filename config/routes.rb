@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get 'recently_added', to: 'products#new', as: 'recently_added'
   get 'recently_updated', to: 'products#recently_updated', as: 'recently_updated'
 
-  get 'charges', to: 'charges#index', as: 'charges'
+  resources :charges
+  get 'place_order', to: 'place_orders#index', as: 'place_orders'
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -39,7 +39,7 @@
 	<div class="pull-right">
 		<p><strong>Subtotal: </strong><%= number_to_currency(current_order.subtotal, unit: "$") %></p>
 		<% if customer_signed_in? %>
-			<%= link_to "Checkout", charges_path ,class: 'btn btn-primary btn-md' %>
+			<%= link_to "Checkout", place_orders_path ,class: 'btn btn-primary btn-md' %>
 		<% else %>
 			<%= link_to('Checkout', new_customer_session_path, class: 'btn btn-primary btn-md')  %>
 		<% end %>
