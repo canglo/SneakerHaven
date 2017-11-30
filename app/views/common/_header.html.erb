@@ -18,6 +18,18 @@
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'About', about_path %></li>
         <li><%= link_to 'Contact', contact_path %></li>
+        <% if customer_signed_in? %>
+        <li>
+          <%= link_to('Logout', destroy_customer_session_path, method: :delete) %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to('Login', new_customer_session_path)  %>
+        </li>
+        <li>
+          <%= link_to('SignUp', new_customer_registration_path)  %>
+        </li>
+        <% end %>
         <li class="active cart"><%= render 'common/cart' %></li>
       </ul>
     </div><!-- /.navbar-collapse -->

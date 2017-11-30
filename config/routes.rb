@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :customers
-  
+
   resources :line_items
   resource :carts, only: [:show]
   root to: 'products#index'
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get 'recently_updated', to: 'products#recently_updated', as: 'recently_updated'
 
   get 'charges', to: 'charges#index', as: 'charges'
-  get 'signin', to: 'customers#index', as: 'signin'
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
