@@ -10,7 +10,5 @@ class Product < ApplicationRecord
 
   validates :name, :description, :size, :price, :stock_quantity, :image, presence: true
 
-  CarrierWave.configure do |config|
-    config.cache_dir = "#{Rails.root}/tmp/uploads"
-  end
+  
 end
