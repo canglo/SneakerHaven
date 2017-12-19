@@ -2,13 +2,13 @@
 	<div class="card">
 		<div class="container-fliud">
 			<div class="wrapper row">
-
-				<div class="preview col-md-6">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="preview com-sm-12 col-md-6 col-lg-6">
           <%= image_tag @product.image, :class => "showProductImage" %>
 				</div>
 
 
-				<div class="details col-md-6">
+				<div class="details col-sm-12 col-md-6 col-lg-6">
 					<h2 class="product-title"><%= @product.name %></h2>
           <h4>Description</h4>
 					<p class="product-description"><%= @product.description %></p>
@@ -18,10 +18,7 @@
           <h5 class="condition">Condition: <%= @product.condition.name %></h5>
 					<h5 class="sizes">Size: <%= @product.size %></h5>
 					<div class="action">
-            <!-- <button type="button" class="btn btn-primary">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-              Add
-            </button> -->
+
 						<%= form_for(@line_item, remote: true) do |f| %>
 
 		          <%= f.hidden_field :product_id, value: @product.id %>
@@ -31,6 +28,8 @@
 		        <% end %>
 					</div>
 				</div>
+
+			</div>
 
 			</div>
 		</div>

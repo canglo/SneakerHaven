@@ -17,9 +17,9 @@ class ProductsController < ApplicationController
     keywords = "%" + params[:search_keywords] + "%"
 
     if params[:categories] != ""
-      @found_products = Product.where("name LIKE ?", keywords).where("category_id = ?", params[:categories]).page(params[:page]).per(6)
+      @found_products = Product.where("name ILIKE ?", keywords).where("category_id = ?", params[:categories]).page(params[:page]).per(6)
     else
-      @found_products = Product.where("name LIKE ?", keywords).page(params[:page]).per(6)
+      @found_products = Product.where("name ILIKE ?", keywords).page(params[:page]).per(6)
     end
   end
 

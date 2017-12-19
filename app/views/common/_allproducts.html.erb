@@ -4,7 +4,7 @@
       <%= image_tag allproducts.image, class: 'productImage' %>
     <% end %>
     <div class="caption">
-      <h5 class="text-center"><%= link_to allproducts.name, product_path(allproducts), class: 'disabledLink' %></h5>
+      <h4 class="text-center"><%= link_to allproducts.name, product_path(allproducts), class: 'disabledLink' %></h4>
       <p><strong>Price: </strong><%= number_to_currency(allproducts.price, unit: "$") %></p>
       <p>
         <%= form_for(@line_item, remote: true) do |f| %>
