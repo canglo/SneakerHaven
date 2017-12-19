@@ -16,14 +16,14 @@
   <% end %>
 
 <h2 class="my-4">Brands</h2>
-<div class="list-group">
+<div class="list-group text-center">
   <% @categories.each do |category| %>
     <%= link_to category.name, category_path(category), :class => "list-group-item" %>
   <% end %>
 </div>
 
 <h2 class="my-4">Filter</h2>
-<div class="list-group">
+<div class="list-group text-center">
   <%= link_to 'Newly listed', recently_added_path, :class => "list-group-item" %>
   <%= link_to 'Recently updated', recently_updated_path, :class => "list-group-item" %>
 </div>
