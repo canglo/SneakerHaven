@@ -1,24 +1,20 @@
 <div class="col-sm-6 col-md-4">
   <div class="thumbnail">
-    <%= image_tag allproducts.image, :class => "productImage" %>
+    <%= link_to product_path(allproducts) do %>
+      <%= image_tag allproducts.image, class: 'productImage' %>
+    <% end %>
     <div class="caption">
-      <h3><%= allproducts.name %></h3>
+      <h3><%= link_to allproducts.name, product_path(allproducts), class: 'disabledLink' %></h3>
       <p><strong>Price: </strong><%= number_to_currency(allproducts.price, unit: "$") %></p>
-      <p><strong>Category: </strong><%= allproducts.category.name %></p>
-      <p><strong>Stock: </strong><%= allproducts.stock_quantity %></p>
-
       <p>
-        <%= link_to 'View', product_path(allproducts), :class => "btn btn-default" %>
-        <!-- <button type="button" class="btn btn-primary">
-          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-          Add
-        </button> -->
         <%= form_for(@line_item, remote: true) do |f| %>
 
           <%= f.hidden_field :product_id, value: allproducts.id %>
           <%= f.hidden_field :quantity, value: 1 %>
-          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
-
+          <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
+          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          Add
+          <% end %>
         <% end %>
       </p>
     </div>

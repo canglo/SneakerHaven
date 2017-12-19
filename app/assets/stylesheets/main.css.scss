@@ -1,7 +1,10 @@
-img.productImage{
-  height: 150px;
-  width: 250px;
+a{
+  img.productImage{
+    height: 150px;
+    width: 250px;
+  }
 }
+
 img.showProductImage{
   height: 300px;
   width: 500px;
@@ -9,4 +12,15 @@ img.showProductImage{
 img.cartImage{
   height: 90px;
   width: 150px;
+}
+.disabledLink{
+  text-decoration: none;
+  color: black;
+}
+.disabledLink:hover{
+  text-decoration: none;
+  color: black;
+}
+.search{
+  width: 10px;
 }
