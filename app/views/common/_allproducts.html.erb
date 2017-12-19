@@ -1,10 +1,10 @@
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-6 col-md-4 col-lg-4">
   <div class="thumbnail">
     <%= link_to product_path(allproducts) do %>
       <%= image_tag allproducts.image, class: 'productImage' %>
     <% end %>
     <div class="caption">
-      <h3 class="text-center"><%= link_to allproducts.name, product_path(allproducts), class: 'disabledLink' %></h3>
+      <h5 class="text-center"><%= link_to allproducts.name, product_path(allproducts), class: 'disabledLink' %></h5>
       <p><strong>Price: </strong><%= number_to_currency(allproducts.price, unit: "$") %></p>
       <p>
         <%= form_for(@line_item, remote: true) do |f| %>
